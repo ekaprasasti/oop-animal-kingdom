@@ -1,0 +1,320 @@
+# Animal Kingdom Simulation - Pembelajaran OOP Sederhana
+## Product Requirements Document untuk Pembelajaran Step-by-Step
+
+### Tujuan Pembelajaran
+
+Project ini dirancang untuk memahami konsep Object-Oriented Programming (OOP) secara bertahap menggunakan analogi makhluk hidup yang mudah dipahami. Setiap langkah focus pada satu konsep OOP dengan contoh praktis yang bisa langsung dicoba dan dimodifikasi.
+
+### Prinsip Pembelajaran
+
+1. **Satu Konsep Per Langkah** - Setiap fase fokus pada satu konsep OOP
+2. **Trial and Error Friendly** - Kode sederhana yang mudah dimodifikasi untuk eksperimen
+3. **Analogi Real World** - Menggunakan perilaku hewan yang familiar
+4. **Learning by Doing** - Setiap konsep langsung dipraktikkan dengan coding
+
+### Tahapan Pembelajaran
+
+#### Tahap 1: Mengenal Class dan Object
+**Konsep: Class sebagai Blueprint, Object sebagai Instance**
+
+**Apa yang akan dipelajari:**
+- Membuat class Animal sederhana
+- Membuat object dari class
+- Memahami perbedaan class dan object
+
+**Implementasi:**
+1. Buat class Animal dengan properties: name, type, sound
+2. Buat method makeSound() yang menampilkan suara hewan
+3. Buat beberapa object hewan (kucing, anjing, sapi)
+4. Panggil method makeSound() untuk setiap hewan
+
+**Eksplorasi Mandiri:**
+- Coba tambah property baru (umur, warna)
+- Buat method baru (eat, sleep)
+- Buat lebih banyak hewan dengan karakteristik berbeda
+
+**Pemahaman Check:**
+- Bisakah kamu membuat 5 hewan berbeda dari satu class?
+- Apakah setiap hewan punya karakteristik yang independent?
+
+#### Tahap 2: Constructor dan Method
+**Konsep: Inisialisasi Object dan Perilaku Object**
+
+**Apa yang akan dipelajari:**
+- Menggunakan constructor untuk set initial values
+- Membuat method yang mengubah state object
+- Parameter dalam method
+
+**Implementasi:**
+1. Tambah constructor di class Animal untuk set name dan type
+2. Buat method feed() yang menambah level kelaparan
+3. Buat method play() yang mengurangi energi
+4. Tambah property hunger dan energy
+
+**Eksplorasi Mandiri:**
+- Coba buat method yang menggunakan parameter
+- Buat method yang mengembalikan nilai (return)
+- Eksperimen dengan mengubah values dan lihat efeknya
+
+**Pemahaman Check:**
+- Apakah setiap object punya state yang terpisah?
+- Bisakah kamu membuat method yang mengubah multiple properties?
+
+#### Tahap 3: Encapsulation - Menyembunyikan Data
+**Konsep: Private Properties dan Access Control**
+
+**Apa yang akan dipelajari:**
+- Private properties dengan # symbol
+- Getter dan setter methods
+- Mengapa perlu menyembunyikan data
+
+**Implementasi:**
+1. Ubah properties menjadi private (#name, #health, #energy)
+2. Buat getter methods (getName, getHealth, getEnergy)
+3. Buat setter methods dengan validation (setHealth hanya 0-100)
+4. Lihat apa yang terjadi jika akses private property langsung
+
+**Eksplorasi Mandiri:**
+- Coba akses private property dari luar class (akan error)
+- Buat validation rules berbeda untuk setter
+- Eksperimen dengan read-only properties (hanya getter)
+
+**Pemahaman Check:**
+- Mengapa private properties penting?
+- Bisakah kamu buat property yang hanya bisa dibaca, tidak bisa diubah?
+
+#### Tahap 4: Inheritance - Pewarisan Sifat
+**Konsep: Class Child mewarisi dari Class Parent**
+
+**Apa yang akan dipelajari:**
+- Extends keyword untuk inheritance
+- super() untuk akses parent constructor
+- Menggunakan parent methods di child class
+
+**Implementasi:**
+1. Buat class Cat extends Animal
+2. Buat class Dog extends Animal  
+3. Gunakan super() di constructor child class
+4. Cat dan Dog otomatis punya semua method dari Animal
+
+**Eksplorasi Mandiri:**
+- Buat class Fish extends Animal
+- Coba akses parent method dari child object
+- Lihat apakah child object punya semua properties parent
+
+**Pemahaman Check:**
+- Apa yang diwariskan dari parent ke child?
+- Bisakah child class menggunakan semua method parent?
+
+#### Tahap 5: Method Overriding - Mengubah Perilaku
+**Konsep: Child Class punya implementasi berbeda untuk method yang sama**
+
+**Apa yang akan dipelajari:**
+- Override parent method di child class
+- Setiap child bisa punya behavior berbeda
+- Kapan menggunakan super() di overridden method
+
+**Implementasi:**
+1. Override makeSound() di class Cat (return "Meow")
+2. Override makeSound() di class Dog (return "Woof")
+3. Override move() dengan implementasi berbeda (Cat: "jumps", Dog: "runs")
+4. Coba panggil method yang sama pada object berbeda
+
+**Eksplorasi Mandiri:**
+- Override method lain dengan behavior berbeda
+- Coba kombinasi super() dengan custom logic
+- Buat hierarchy lebih dalam (WildCat extends Cat)
+
+**Pemahaman Check:**
+- Mengapa setiap hewan bisa punya suara berbeda dengan method sama?
+- Bisakah kamu buat behavior yang sebagian menggunakan parent logic?
+
+#### Tahap 6: Polymorphism - Satu Interface, Banyak Bentuk
+**Konsep: Object berbeda merespon method sama dengan cara berbeda**
+
+**Apa yang akan dipelajari:**
+- Array berisi object dari class berbeda
+- Memanggil method sama pada semua object
+- Runtime method resolution
+
+**Implementasi:**
+1. Buat array berisi Cat, Dog, dan Animal objects
+2. Loop array dan panggil makeSound() untuk semua
+3. Lihat bagaimana setiap object respond berbeda
+4. Buat method performTrick() yang berbeda untuk setiap animal
+
+**Eksplorasi Mandiri:**
+- Tambah animal types baru ke array
+- Coba method lain pada mixed array
+- Eksperimen dengan conditional behavior berdasarkan type
+
+**Pemahaman Check:**
+- Mengapa bisa memanggil method sama pada object berbeda?
+- Bagaimana JavaScript tahu method mana yang harus dipanggil?
+
+#### Tahap 7: Abstract Concepts - Template untuk Class Lain
+**Konsep: Class yang tidak bisa di-instantiate langsung**
+
+**Apa yang akan dipelajari:**
+- Abstract class concept (meski JavaScript tidak punya built-in)
+- Template methods yang harus di-implement child
+- Interface-like behavior
+
+**Implementasi:**
+1. Buat class AbstractPet dengan method yang throw error jika tidak di-override
+2. Buat class HomeCat extends AbstractPet
+3. Force HomeCat untuk implement required methods
+4. Coba instantiate AbstractPet langsung (akan error)
+
+**Eksplorasi Mandiri:**
+- Buat abstract class lain dengan required methods berbeda
+- Eksperimen dengan partial implementation di abstract class
+- Coba buat "interface" dengan multiple required methods
+
+**Pemahaman Check:**
+- Kapan menggunakan abstract class vs regular class?
+- Mengapa abstract class tidak bisa di-instantiate?
+
+#### Tahap 8: Composition - "Has-A" Relationship
+**Konsep: Object berisi object lain, bukan inheritance**
+
+**Apa yang akan dipelajari:**
+- Composition vs Inheritance
+- Object sebagai property dari object lain
+- Delegation ke composed objects
+
+**Implementasi:**
+1. Buat class Owner dengan property name
+2. Buat class Pet dengan property owner (Owner object)
+3. Buat class PetShop yang berisi array of pets
+4. Implement methods yang delegate ke composed objects
+
+**Eksplorasi Mandiri:**
+- Buat relationship lebih complex (Family has multiple Pets)
+- Eksperimen dengan nested composition
+- Coba scenario dimana composition lebih baik dari inheritance
+
+**Pemahaman Check:**
+- Kapan menggunakan composition vs inheritance?
+- Bisakah object punya multiple composed objects?
+
+#### Tahap 9: Static Members - Shared Across All Instances
+**Konsep: Properties dan Methods yang belong ke Class, bukan Instance**
+
+**Apa yang akan dipelajari:**
+- Static properties dan methods
+- Class-level data yang shared
+- Utility functions dalam class
+
+**Implementasi:**
+1. Buat static property animalCount di Animal class
+2. Increment animalCount di constructor
+3. Buat static method compareAnimals() 
+4. Akses static members tanpa create instance
+
+**Eksplorasi Mandiri:**
+- Buat static method untuk validation
+- Eksperimen dengan static constants
+- Coba counter untuk different animal types
+
+**Pemahaman Check:**
+- Apa bedanya static method dengan instance method?
+- Kapan menggunakan static vs instance members?
+
+#### Tahap 10: Putting It All Together - Mini Simulation
+**Konsep: Kombinasi semua konsep OOP dalam satu aplikasi**
+
+**Apa yang akan dipelajari:**
+- Integrasi multiple classes
+- Real-world application design
+- OOP best practices
+
+**Implementasi:**
+1. Buat simple pet simulation dengan semua concepts
+2. Multiple animal types dengan behaviors berbeda
+3. Owner yang bisa interact dengan pets
+4. Simple game loop untuk interaction
+
+**Eksplorasi Mandiri:**
+- Tambah features baru menggunakan OOP concepts
+- Refactor code untuk better organization
+- Eksperimen dengan different design approaches
+
+**Pemahaman Check:**
+- Bisakah kamu explain semua OOP concepts yang digunakan?
+- Mana concepts yang paling berguna dalam project ini?
+
+### Structure Project Sederhana
+
+```
+animal-kingdom/
+├── step-01-classes/
+│   └── animal.js
+├── step-02-constructor/
+│   └── animal.js
+├── step-03-encapsulation/
+│   └── animal.js
+├── step-04-inheritance/
+│   ├── animal.js
+│   ├── cat.js
+│   └── dog.js
+├── step-05-overriding/
+│   └── (same files, updated)
+├── step-06-polymorphism/
+│   └── zoo.js
+├── step-07-abstract/
+│   └── abstract-pet.js
+├── step-08-composition/
+│   ├── owner.js
+│   └── pet-shop.js
+├── step-09-static/
+│   └── animal-registry.js
+└── step-10-simulation/
+    └── pet-sim.js
+```
+
+### Pedoman Implementasi
+
+#### Kesederhanaan adalah Kunci
+- Setiap file maksimal 50 lines code
+- Fokus pada satu concept per step
+- Avoid complex logic yang mengalihkan dari pembelajaran OOP
+- Gunakan console.log untuk output, tidak perlu UI
+
+#### Trial and Error Approach
+- Setiap step punya "Coba Modifikasi" section
+- Sengaja buat scenarios yang akan error untuk pembelajaran
+- Encourage eksperimen dengan mengubah code
+- Provide "What happens if..." scenarios
+
+#### Validation Pemahaman
+- Simple questions di akhir setiap step
+- Practical challenges yang bisa dikerjakan mandiri
+- Compare output expected vs actual
+- Self-assessment checklist
+
+### Success Criteria
+
+**Setelah menyelesaikan semua tahap, learner harus bisa:**
+1. Explain kapan menggunakan class vs object
+2. Implement encapsulation dengan proper access control
+3. Design inheritance hierarchy yang make sense
+4. Use polymorphism untuk clean code
+5. Choose composition vs inheritance appropriately
+6. Apply OOP concepts untuk solve simple problems
+
+**Tidak perlu menguasai:**
+- Complex design patterns
+- Performance optimization
+- Error handling frameworks
+- Testing methodologies
+- Advanced JavaScript features
+
+### Deliverables
+
+1. **10 Step-by-step Implementations** - Satu folder per concept
+2. **Simple Examples** - Working code yang bisa langsung dijalankan
+3. **Modification Challenges** - Suggestions untuk trial and error
+4. **Concept Explanations** - Simple comments explaining why, not just how
+
+Project ini focus pada pemahaman fundamental OOP melalui praktik langsung dengan code yang sederhana dan mudah dimodifikasi untuk eksperimen.
