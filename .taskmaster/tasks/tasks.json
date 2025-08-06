@@ -9,7 +9,7 @@
         "testStrategy": "Jalankan file dengan Node.js dan verifikasi output yang menampilkan nama, tipe, dan suara dari setiap hewan. Pastikan setiap hewan memiliki karakteristik yang independen dan method makeSound() berfungsi dengan benar untuk semua instance.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": []
       },
       {
@@ -22,7 +22,7 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": []
       },
       {
@@ -134,7 +134,7 @@
     ],
     "metadata": {
       "created": "2025-08-05T03:12:48.316Z",
-      "updated": "2025-08-05T03:12:48.316Z",
+      "updated": "2025-08-06T02:54:19.962Z",
       "description": "Tasks for master context"
     }
   }
